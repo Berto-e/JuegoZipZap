@@ -2,12 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/C:\Users\madri\UnityProjects\JuegoZipZap\ZipZap\[Ll]ibrary/
+ZipZap\[Ll]ibrary/
+ZipZap\UserSettings/
 /[Tt]emp/
-/[Oo]bj/
+ZipZap\[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-/[Ll]ogs/
+ZipZap\[Ll]ogs/
 /[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
