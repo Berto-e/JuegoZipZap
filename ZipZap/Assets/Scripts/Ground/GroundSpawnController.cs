@@ -6,7 +6,10 @@ public class GroundSpawnController : MonoBehaviour
 {
     public GameObject lastGroundObject;
     [SerializeField] private GameObject groundPrefab;
+    [SerializeField] private GameObject coinPrefab;
+    
     private GameObject newGroundObject;
+     private GameObject newCoinObject;
     private int groundDirection;
     void Start()
     {
@@ -30,6 +33,7 @@ public void GenerateRandomNewGrounds()
         if (groundDirection == 0)
         {
             newGroundObject = Instantiate(groundPrefab, new Vector3(lastGroundObject.transform.position.x - 1f, lastGroundObject.transform.position.y,lastGroundObject.transform.position.z), Quaternion.identity);
+            newCoinObject = Instantiate(coinPrefab, new Vector3(lastGroundObject.transform.position.x, lastGroundObject.transform.position.y + 1f,lastGroundObject.transform.position.z), Quaternion.identity);
             lastGroundObject = newGroundObject;
         }
         else
