@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ButtonScenes : MonoBehaviour
 {
+    
     public void ExitButton()
     {
         Application.Quit();
@@ -13,6 +14,8 @@ public class ButtonScenes : MonoBehaviour
     public void SettingsButton()
     {
          SceneManager.LoadScene("Settings",LoadSceneMode.Single);
+
+         
     }
     public void PlayButton()
     {
@@ -22,12 +25,12 @@ public class ButtonScenes : MonoBehaviour
 
     public void ControlsButton()
     {
-        SceneManager.LoadScene("Controls",LoadSceneMode.Single);
+         SceneManager.LoadScene("Controls",LoadSceneMode.Single);
     }
 
     public void AboutGameButton()
     {
-        SceneManager.LoadScene("AboutGame",LoadSceneMode.Single);
+         SceneManager.LoadScene("AboutGame",LoadSceneMode.Single);
     }
 
     public void ReturnMain()
@@ -37,6 +40,7 @@ public class ButtonScenes : MonoBehaviour
     public void ReturnSettings()
     {
         SceneManager.LoadScene("Settings",LoadSceneMode.Single);
+
     }
     
 }

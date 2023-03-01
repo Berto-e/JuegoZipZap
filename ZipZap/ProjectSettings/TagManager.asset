@@ -7,6 +7,10 @@ TagManager:
   - coin
   - suelo
   - enemy
+  - start
+  - settings
+  - controls
+  - aboutgame
   layers:
   - Default
   - TransparentFX

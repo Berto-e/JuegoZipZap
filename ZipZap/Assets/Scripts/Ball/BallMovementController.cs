@@ -25,10 +25,21 @@ public class BallMovementController : MonoBehaviour
         CoinSound = GetComponent<AudioSource>();
         
         //Levels and Die 
-        if(Coins == 10)
+        if( SceneManager.GetActiveScene().name == "ZigZagEasy" && Coins == 10)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
+
+        if( SceneManager.GetActiveScene().name == "ZigZagMedium" && Coins == 20)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
+
+        if( SceneManager.GetActiveScene().name == "ZigZagHard" && Coins == 30)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
+
         if(this.transform.position.y < -1f && StaticClass.Lives > 1)
         {
             StaticClass.Lives--;
