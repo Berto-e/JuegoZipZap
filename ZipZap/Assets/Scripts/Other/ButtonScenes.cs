@@ -30,4 +30,13 @@ public class ButtonScenes : MonoBehaviour
         SceneManager.LoadScene("AboutGame",LoadSceneMode.Single);
     }
 
+    public void ReturnMain()
+    {
+        SceneManager.LoadScene("StartScene",LoadSceneMode.Single);
+    }
+    public void ReturnSettings()
+    {
+        SceneManager.LoadScene("Settings",LoadSceneMode.Single);
+    }
+    
 }
