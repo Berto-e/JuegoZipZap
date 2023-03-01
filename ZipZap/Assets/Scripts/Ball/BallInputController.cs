@@ -14,6 +14,7 @@ public class BallInputController : MonoBehaviour
     void Update()
     {
         HandleBallInputs();
+        
     }
 
     private void HandleBallInputs()
@@ -37,4 +38,6 @@ public class BallInputController : MonoBehaviour
         }
 
     }
+
+   
 }

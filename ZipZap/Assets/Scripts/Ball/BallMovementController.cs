@@ -10,18 +10,25 @@ public class BallMovementController : MonoBehaviour
     [SerializeField] private float ballMoveSpeed;
     public TMP_Text CoinText;
     public AudioSource CoinSound;
+    private Rigidbody rb;
     private int Coins = 0;
 
     private void Update()
     {
         SetBallMovement();
+        rb = GetComponent<Rigidbody>();
         CoinSound = GetComponent<AudioSource>();
         if(Coins == 10)
         {
             EndGame();
         }
-    }
+        if(this.transform.position.y < -1f)
+        {
+            SceneManager.LoadScene("ZigZagEasy",LoadSceneMode.Single);
+        }
 
+    }
+   
     private void SetBallMovement()
     {
         transform.position+= ballDataTransmiter.GetBallDirection() * ballMoveSpeed * Time.deltaTime;

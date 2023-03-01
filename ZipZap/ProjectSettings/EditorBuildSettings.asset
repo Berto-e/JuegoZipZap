@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/ZigZagEasy.unity
+    guid: 70dd4dbc7c214054c8c5eb78ad2299d6
+  - enabled: 1
+    path: Assets/Scenes/ZigZagMedium.unity
+    guid: 559064b4f9dd6d34b8e85ade4f087f46
+  - enabled: 1
+    path: Assets/Scenes/ZigZagHard.unity
+    guid: 31015eb0b289fb5428d4a5f2d4819ede
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 3eabc6695921ba443a67d4d0cd608839
