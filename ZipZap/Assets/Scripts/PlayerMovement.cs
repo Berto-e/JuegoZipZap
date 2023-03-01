@@ -10,10 +10,10 @@ public class PlayerMovement : MonoBehaviour
     //public GameObject prefabsuelo;
     public Camera cam;
     private Vector3 offset;
-    private float miX, miZ;
+    //private float miZ,miX;
+    private Vector3 lastfloor;
     private Rigidbody rb;
     private Vector3 direccionActual;
-    private Vector3 initpos;
     public int velocidad;
     private int coins; 
     public TMP_Text CoinText;
@@ -21,10 +21,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         offset = cam.transform.position;
-        initpos = this.transform.position;
         coins = 0;
-        miX = 0; miZ = 0;
-        //SueloInicial();
+         //miZ = 0;
+         //miX = 0;
+         //SueloInicial();
         rb = GetComponent<Rigidbody>();
         direccionActual = Vector3.forward;
         Coinsound = GetComponent<AudioSource>();
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void restartGame(){
-        this.transform.position = initpos;
+        this.transform.position = lastfloor;
         rb.Sleep();
         direccionActual = Vector3.zero;
     }
@@ -72,24 +72,38 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) {
-        if(other.gameObject.tag == ("suelo")){
+
+    private void OnCollisionStay(Collision other) {
+        lastfloor = other.transform.position;
+    }
+
+    /*void OnCollisionExit(Collision other) {
+        if(other.transform.tag == "suelo"){
             StartCoroutine(CrearSuelo(other));
         }
     }
+    IEnumerator CrearSuelo(Collision col){
+        yield return new WaitForSeconds(0.5f);
+        col.rigidbody.isKinematic = false;
+        col.rigidbody.useGravity = true;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(col.gameObject);
+        float ran = Random.Range(0f,1f);
+        if(ran < 0.5f)
+            miX+=6.0f;
+        else
+            miZ+=6.0f;
 
-    IEnumerator CrearSuelo(Collider other){
-        yield return new WaitForSeconds(1f);
-        other.GetComponent<Rigidbody>().isKinematic = false;
-        other.GetComponent<Rigidbody>().useGravity = true;
-        yield return new WaitForSeconds(2f);
-        Destroy(other.gameObject);
+        
+        }*/
 
-    }
-    /*void SueloInicial(){
-        for( int i = 0; i < 3; i++){
+        /*void SueloInicial(){
+        for( int i = 0; i < 1; i++){
             miZ += 6.0f;
             GameObject elcubo = Instantiate(prefabsuelo, new Vector3(miX,0,miZ), Quaternion.identity) as GameObject;
+            intifloor = elcubo.transform.position;
         }
     }*/
+    
+
 }
