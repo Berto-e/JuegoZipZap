@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: c379c9bd9319a1f47b8fbeb2c4e1c80b
+  - enabled: 1
     path: Assets/Scenes/ZigZagEasy.unity
     guid: 70dd4dbc7c214054c8c5eb78ad2299d6
   - enabled: 1
@@ -16,5 +19,14 @@ EditorBuildSettings:
     guid: 31015eb0b289fb5428d4a5f2d4819ede
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
-    guid: 3eabc6695921ba443a67d4d0cd608839
+    guid: 4a7dbbfff21e5a745827b367aedeaf7d
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 9bcb9a271dceb9a45825a80769f8b242
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 42883234bec92bd4eb7fb6ad15bedc99
+  - enabled: 1
+    path: Assets/Scenes/AboutGame.unity
+    guid: dc31d6891a43b3941a06881a26af4f8b
   m_configObjects: {}

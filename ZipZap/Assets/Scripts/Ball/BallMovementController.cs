@@ -9,23 +9,37 @@ public class BallMovementController : MonoBehaviour
 
     [SerializeField] private float ballMoveSpeed;
     public TMP_Text CoinText;
+    public TMP_Text LivesText;
     public AudioSource CoinSound;
     private Rigidbody rb;
     private int Coins = 0;
-
+    private  void Start() 
+    {
+        LivesText.text = ":" + StaticClass.Lives.ToString();
+    }
+    
     private void Update()
     {
         SetBallMovement();
         rb = GetComponent<Rigidbody>();
         CoinSound = GetComponent<AudioSource>();
+        
+        //Levels and Die 
         if(Coins == 10)
         {
-            EndGame();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
-        if(this.transform.position.y < -1f)
+        if(this.transform.position.y < -1f && StaticClass.Lives > 1)
         {
-            SceneManager.LoadScene("ZigZagEasy",LoadSceneMode.Single);
+            StaticClass.Lives--;
+            LivesText.text = ":" + StaticClass.Lives.ToString();
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Load Actual Scene
         }
+        else if(this.transform.position.y < -1f && StaticClass.Lives == 1)
+        {
+            SceneManager.LoadScene("EndScene",LoadSceneMode.Single);
+        }
+
 
     }
    
@@ -45,8 +59,5 @@ public class BallMovementController : MonoBehaviour
         }    
     }
 
-    private void EndGame()
-    {
-        SceneManager.LoadScene("EndScene",LoadSceneMode.Single);
-    }
+   
 }
